@@ -1,78 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Numbers - Signify</title>
-    <link rel="stylesheet" href="css/content.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Numbers — Signify</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <!-- HEADER -->
-    <header class="header">
-        <div class="logo-section">
-            <span class="logo-icon">🤟</span>
-        </div>
-        <div class="brand">
-            <h1>Signify</h1>
-            <p>Express Meaning Through Signs</p>
-        </div>
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="learn.html" class="nav-link active">Learn</a></li>
-                <li><a href="about.html" class="nav-link">About Us</a></li>
-            </ul>
-        </nav>
-    </header>
+<body data-page="numbers">
 
-    <!-- BACK BUTTON -->
-    <a href="learn.html" class="back-button">← Back to Learn</a>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="nav-logo-badge">🤟</span> Signify</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about-site.html">About</a></li>
+      <li><a href="learn.html">Learn</a></li>
+      <li><a href="about-us.html">Team</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-cta" onclick="location.href='learn.html'">Start Learning</button>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+  
+</nav>
 
-    <!-- CONTENT SECTION -->
-    <section class="content-section">
-        <h2 class="section-title">Numbers in Sign Language</h2>
-        <div class="content-grid" id="numbers-grid"></div>
-    </section>
+<section class="hero-page">
+  <div class="hero-page-inner">
+    <div class="hero-tag"><span class="hero-tag-dot"></span> Numbers</div>
+    <h1>Sign Language <em>Numbers</em></h1>
+    <p>Learn to sign 0 through 9. Tap any number to see the animated demonstration.</p>
+  </div>
+</section>
 
-    <!-- MODAL -->
-    <div id="signModal" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
-            <h2 class="modal-title" id="modal-title"></h2>
-            <div class="modal-gif" id="modal-gif"></div>
-        </div>
+<section class="section section-cloud">
+  <div class="tiles-header">
+    <a href="learn.html" class="back-link">Back to Learn</a>
+    <h2>0 – 9</h2>
+    <span class="tile-count">10 signs</span>
+    <div class="search-bar">
+      <input type="text" id="tileSearch" placeholder="Search a number…" aria-label="Search numbers">
     </div>
+  </div>
+  <div class="tiles-grid" id="tilesGrid"></div>
+</section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="learn.html">Learn</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Our Mission</h3>
-                <p style="color: rgba(255,255,255,0.7);">Empowering inclusive communication through accessible sign language education for everyone, everywhere.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Connect With Us</h3>
-                <div class="footer-social">
-                    <a href="#" title="Instagram">📷</a>
-                    <a href="#" title="Twitter">𝕏</a>
-                    <a href="#" title="LinkedIn">in</a>
-                    <a href="#" title="GitHub">⚡</a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Signify. All rights reserved. | Built with ❤️ for an inclusive world</p>
-        </div>
-    </footer>
-    <script src="js/shared.js"></script>
-    <script src="js/numbers.js"></script>
+<div class="modal-overlay" id="signModal" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+    <h2 class="modal-title" id="modalTitle"></h2>
+    <div class="modal-gif-wrap">
+      <div class="modal-gif-frame" id="modalGifFrame"></div>
+      <div class="modal-gif-frame" id="modalPlaceholder" style="display:none">
+        <span class="modal-gif-placeholder"></span>
+      </div>
+    </div>
+    <p class="modal-desc" id="modalDesc"></p>
+    <div class="modal-gif-path" id="modalPath"></div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo"><span class="nav-logo-badge">🤟</span> Signify</a>
+      <p>Free sign language education for everyone, everywhere.</p>
+      <div class="footer-social"><a href="#">📷</a><a href="#">𝕏</a><a href="#">in</a><a href="https://github.com/Kartikk13">gh</a></div>
+    </div>
+    <div class="footer-col"><h4>Learn</h4><ul>
+      <li><a href="alphabets.html">Alphabets</a></li>
+      <li><a href="numbers.html">Numbers</a></li>
+      <li><a href="words.html">Common Words</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Pages</h4><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about-site.html">About</a></li>
+      <li><a href="about-us.html">Team</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Connect</h4><ul>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Signify.</span><span>Free forever</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/signs.js"></script>
 </body>
 </html>
