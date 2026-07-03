@@ -43,19 +43,56 @@
   </div>
   <div class="tiles-grid" id="tilesGrid"></div>
 </section>
-
-<div class="modal-overlay" id="signModal" role="dialog" aria-modal="true">
+<!-- MODAL -->
+<div class="modal-overlay" id="signModal" role="dialog" aria-modal="true" aria-label="Sign demonstration">
   <div class="modal-box">
+
+    <!-- Close button -->
     <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+
+    <!-- Left arrow — OUTSIDE modal content, sits on the left edge -->
+    <button class="modal-prev" id="modalPrev" aria-label="Previous sign">&#8592;</button>
+
+    <!-- Right arrow -->
+    <button class="modal-next" id="modalNext" aria-label="Next sign">&#8594;</button>
+
+    <!-- Counter: "3 / 26" -->
+    <div class="modal-counter">
+      <span class="modal-counter-text">Sign</span>
+      <span class="modal-counter-num" id="modalCounter">1 / 26</span>
+    </div>
+
+    <!-- Title -->
     <h2 class="modal-title" id="modalTitle"></h2>
+
+    <!-- GIF spotlight ring -->
     <div class="modal-gif-wrap-numbers">
       <div class="modal-gif-frame-numbers" id="modalGifFrame"></div>
       <div class="modal-gif-frame-numbers" id="modalPlaceholder" style="display:none">
         <span class="modal-gif-placeholder"></span>
       </div>
     </div>
+
+    <!-- Description -->
     <p class="modal-desc" id="modalDesc"></p>
+
+    <!-- GIF file path hint -->
     <div class="modal-gif-path" id="modalPath"></div>
+
+    <!-- Keyboard hint (hidden on mobile via arrow-row) -->
+    <p class="modal-key-hint">
+      <kbd>←</kbd> previous &nbsp;·&nbsp; <kbd>→</kbd> next &nbsp;·&nbsp; <kbd>Esc</kbd> close
+    </p>
+
+    <!-- Mobile only: arrows inline -->
+    <div class="modal-arrow-row" style="display:none" id="mobileArrowRow">
+      <button class="modal-prev" id="modalPrevMobile" aria-label="Previous sign">&#8592;</button>
+      <div class="modal-counter">
+        <span class="modal-counter-num" id="modalCounterMobile">1 / 26</span>
+      </div>
+      <button class="modal-next" id="modalNextMobile" aria-label="Next sign">&#8594;</button>
+    </div>
+
   </div>
 </div>
 

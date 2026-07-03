@@ -959,9 +959,10 @@ input, textarea, select { font-family: var(--fb); }
   display: flex; align-items: center; justify-content: center;
   background: var(--cloud);
 }
-.modal-gif-frame-numbers img { width: 100%; height: 100%; object-fit: cover; border-radius: 20%; }
+.modal-gif-frame-numbers img { width: 100%; height: 100%; object-fit: cover; border-radius: 20%;margin-left: 23px; }
 
 .modal-gif-placeholder {
+  margin-left: 30px;
   font-size: 5rem;
   animation: bounce .8s ease-in-out infinite alternate;
 }
@@ -974,6 +975,134 @@ input, textarea, select { font-family: var(--fb); }
   line-height: 1.6;
 }
 
+/* ═══════════════════════════════════════
+   MODAL NAVIGATION ARROWS
+═══════════════════════════════════════ */
+
+/* Make modal-box relative so arrows position against it */
+.modal-box { overflow: visible; }
+
+/* Shared arrow button style */
+.modal-prev,
+.modal-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--cloud);
+  background: var(--navy);
+  box-shadow: 0 8px 24px rgba(55,67,117,.4);
+  transition: background .3s var(--ease),
+              transform .35s var(--spring),
+              box-shadow .3s,
+              opacity .3s;
+  z-index: 10;
+}
+.modal-prev { left: -68px; }
+.modal-next { right: -68px; }
+
+.modal-prev:hover,
+.modal-next:hover {
+  background: var(--maroon);
+  box-shadow: 0 12px 28px rgba(137,81,89,.45);
+}
+.modal-prev:hover { transform: translateY(-50%) translateX(-3px); }
+.modal-next:hover { transform: translateY(-50%) translateX(3px); }
+
+/* Disabled state when at first or last */
+.modal-prev:disabled,
+.modal-next:disabled {
+  opacity: .28;
+  cursor: not-allowed;
+  background: var(--navy);
+  transform: translateY(-50%);
+  box-shadow: none;
+}
+
+/* Counter pill — "3 / 26" */
+.modal-counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+.modal-counter-text {
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(55,67,117,.5);
+}
+.modal-counter-num {
+  padding: 3px 12px;
+  background: var(--peri-lt);
+  color: var(--navy);
+  border-radius: 99px;
+  font-size: .8rem;
+  font-weight: 700;
+  min-width: 60px;
+  text-align: center;
+  transition: background .25s, color .25s;
+}
+
+/* Slide animation when switching signs */
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0);    }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0);     }
+}
+.modal-sliding-right { animation: slideInRight .28s var(--ease); }
+.modal-sliding-left  { animation: slideInLeft  .28s var(--ease); }
+
+/* Keyboard hint at the bottom */
+.modal-key-hint {
+  margin-top: 14px;
+  text-align: center;
+  font-size: .72rem;
+  color: rgba(55,67,117,.38);
+  letter-spacing: .04em;
+}
+.modal-key-hint kbd {
+  display: inline-block;
+  padding: 2px 7px;
+  border: 1px solid rgba(55,67,117,.2);
+  border-radius: 5px;
+  font-size: .7rem;
+  font-family: var(--fb);
+  background: rgba(55,67,117,.05);
+  color: rgba(55,67,117,.5);
+}
+
+/* ── Responsive: arrows go below/above on small screens ── */
+@media (max-width: 680px) {
+  .modal-prev,
+  .modal-next {
+    position: static;
+    transform: none;
+    width: 42px; height: 42px;
+    font-size: 1rem;
+  }
+  .modal-prev:hover { transform: translateX(-3px); }
+  .modal-next:hover { transform: translateX(3px); }
+  .modal-arrow-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+    gap: 12px;
+  }
+  .modal-arrow-row .modal-counter { margin-bottom: 0; flex: 1; }
+}
 
 /* ═══════════════════════════════════════
    ABOUT-US: TEAM CARDS
