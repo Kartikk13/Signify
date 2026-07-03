@@ -584,7 +584,7 @@ input, textarea, select { font-family: var(--fb); }
    HERO — INTERIOR PAGES
 ═══════════════════════════════════════ */
 .hero-page {
-  padding: calc(var(--nav-h) + 70px) 5vw 70px;
+  padding: calc(var(--nav-h) + 40px) 5vw 40px;
   background: var(--navy);
   text-align: center;
   position: relative;
@@ -612,7 +612,7 @@ input, textarea, select { font-family: var(--fb); }
 .hero-page h1 { font-family: var(--fd); font-size: clamp(2.2rem, 4.5vw, 3.4rem); color: var(--cloud); line-height: 1.1; }
 .hero-page h1 em { font-style: italic; color: var(--peach); }
 .hero-page p { font-size: 1.05rem; color: rgba(255,252,245,.7); margin-top: 18px; line-height: 1.7; }
-.hero-page .btn-row { display: flex; justify-content: center; gap: 14px; margin-top: 32px; flex-wrap: wrap; }
+.hero-page .btn-row { display: flex; justify-content: center; gap: 45px; margin-top: 32px; flex-wrap: wrap; }
 
 /* ═══════════════════════════════════════
    ABOUT-SITE: MISSION CARDS
@@ -1033,7 +1033,7 @@ input, textarea, select { font-family: var(--fb); }
   align-items: start;
 }
 .contact-info h2 { font-family: var(--fd); font-size: 2rem; color: var(--navy); margin-bottom: 16px; }
-.contact-info p { font-size: .95rem; color: rgba(55,67,117,.75); line-height: 1.7; margin-bottom: 32px; }
+.contact-info p { font-size: .95rem; color: rgba(55, 67, 117, 0.973); line-height: 1.7; margin-bottom: 32px; }
 .contact-detail {
   display: flex; align-items: flex-start; gap: 14px;
   margin-bottom: 20px;
@@ -1047,14 +1047,14 @@ input, textarea, select { font-family: var(--fb); }
   flex-shrink: 0;
 }
 .contact-detail-text strong { display: block; font-size: .85rem; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
-.contact-detail-text span { font-size: .85rem; color: rgba(55,67,117,.65); }
+.contact-detail-text span { font-size: .85rem; color: rgba(55, 67, 117, 0.971); }
 
 .contact-form {
-  background: var(--cloud);
+  background: var(--peri-lt);
   border-radius: 24px;
   padding: 40px;
   box-shadow: 0 20px 50px rgba(55,67,117,.15);
-  border: 1px solid rgba(55,67,117,.08);
+  border: 3px solid rgba(55, 67, 117, 0.162);
 }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .form-group { margin-bottom: 20px; }
@@ -1094,7 +1094,7 @@ input, textarea, select { font-family: var(--fb); }
   display: none;
   text-align: center;
   padding: 20px;
-  background: rgba(55,67,117,.06);
+  background: rgba(66, 72, 93, 0.06);
   border-radius: 12px;
   color: var(--navy);
   font-weight: 600;
