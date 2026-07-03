@@ -3,37 +3,30 @@
 /* ─── DATA ─── */
 const ALPHABETS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(l => ({
   id: l, main: l, label: `Letter ${l}`,
-  gif: `img/alphabets/${l}.gif`,
+  gif: `img/${l}.gif`,
   desc: `The ASL fingerspelling sign for the letter "${l}".`
 }));
 
 const NUMBERS = Array.from({ length: 10 }, (_, n) => ({
   id: String(n), main: String(n), label: `Number ${n}`,
-  gif: `img/numbers/${n}.gif`,
+  gif: `img/${n}.gif`,
   desc: `The ASL number sign for "${n}".`
 }));
 
 const WORDS = [
-  { id:'hello',    main:'👋', label:'Hello',    gif:'img/words/hello.gif',     desc:'A common greeting in sign language.' },
-  { id:'thankyou', main:'🙏', label:'Thank You', gif:'img/words/thankyou.gif',  desc:'Express gratitude using this sign.' },
-  { id:'sorry',    main:'😔', label:'Sorry',     gif:'img/words/sorry.gif',     desc:'Apologise with this hand movement.' },
-  { id:'please',   main:'🤲', label:'Please',    gif:'img/words/please.gif',    desc:'A polite way to make a request.' },
-  { id:'yes',      main:'✅', label:'Yes',       gif:'img/words/yes.gif',       desc:'A simple nod-like hand gesture.' },
-  { id:'no',       main:'✋', label:'No',        gif:'img/words/no.gif',        desc:'Shake two fingers to say no.' },
-  { id:'help',     main:'🆘', label:'Help',      gif:'img/words/help.gif',      desc:'Ask for assistance with this sign.' },
-  { id:'love',     main:'❤️', label:'Love',      gif:'img/words/love.gif',      desc:'Cross arms over your chest.' },
-  { id:'friend',   main:'🤝', label:'Friend',    gif:'img/words/friend.gif',    desc:'Interlock fingers to show friendship.' },
-  { id:'family',   main:'👨‍👩‍👧', label:'Family',   gif:'img/words/family.gif',   desc:'A sweeping gesture for family.' },
-  { id:'eat',      main:'🍽️', label:'Eat',       gif:'img/words/eat.gif',       desc:'Bring hand to mouth to sign "eat".' },
-  { id:'water',    main:'💧', label:'Water',     gif:'img/words/water.gif',     desc:'Tap your chin with a W handshape.' },
-  { id:'home',     main:'🏠', label:'Home',      gif:'img/words/home.gif',      desc:'Touch fingertips to cheek then chin.' },
-  { id:'school',   main:'🎓', label:'School',    gif:'img/words/school.gif',    desc:'Clap hands together twice.' },
-  { id:'happy',    main:'😊', label:'Happy',     gif:'img/words/happy.gif',     desc:'Brush hand upward on chest.' },
-  { id:'good',     main:'👍', label:'Good',      gif:'img/words/good.gif',      desc:'Bring flat hand from chin forward.' },
-  { id:'morning',  main:'🌅', label:'Morning',   gif:'img/words/morning.gif',   desc:'Raise arm like the rising sun.' },
-  { id:'night',    main:'🌙', label:'Night',     gif:'img/words/night.gif',     desc:'Arc wrist downward over forearm.' },
-  { id:'bathroom', main:'🚿', label:'Bathroom',  gif:'img/words/bathroom.gif',  desc:'Shake a T handshape back and forth.' },
-  { id:'hungry',   main:'🍕', label:'Hungry',    gif:'img/words/hungry.gif',    desc:'C-hand slides down chest.' },
+  { id:'hello',    main:'👋', label:'Hello',    gif:'img/Hello.gif',     desc:'A common greeting in sign language.' },
+  { id:'thankyou', main:'🙏', label:'Thank You', gif:'img/ThankYou.gif',  desc:'Express gratitude using this sign.' },
+  { id:'sorry',    main:'😔', label:'Sorry',     gif:'img/Sorry.gif',     desc:'Apologise with this hand movement.' },
+  { id:'please',   main:'🤲', label:'Please',    gif:'img/Please.gif',    desc:'A polite way to make a request.' },
+  { id:'yes',      main:'✅', label:'Yes',       gif:'img/Yes.gif',       desc:'A simple nod-like hand gesture.' },
+  { id:'no',       main:'✋', label:'No',        gif:'img/No.gif',        desc:'Shake two fingers to say no.' },
+  { id:'love',     main:'❤️', label:'Love',      gif:'img/Love.gif',      desc:'Cross arms over your chest.' },
+  { id:'happy',    main:'😊', label:'Happy',     gif:'img/Happy.gif',     desc:'Brush hand upward on chest.' },
+  { id:'Nice-To-Meet-You', main:'👍', label:'Nice to Meet You', gif:'img/Nice-To-Meet-You.gif', desc:'A friendly greeting in sign language.' },
+  { id:'Applause',  main:'👏', label:'Applause',   gif:'img/Applause.gif',   desc:'Clap hands together twice.' },
+  { id:'Beautiful',    main:'🌸', label:'Beautiful',     gif:'img/Beautiful.gif',     desc:'Compliment someone on their appearance.' },
+  { id:'Cool', main:'🆒', label:'Cool',  gif:'img/Cool.gif',  desc:'Shake a T handshape back and forth.' },
+  { id:'Understand',   main:'🍕', label:'Understand',    gif:'img/Understand.gif',    desc:'C-hand slides down chest.' },
 ];
 
 /* ─── RENDER GRID ─── */
@@ -88,7 +81,6 @@ function openModal(item) {
 
   document.getElementById('modalTitle').textContent = item.label;
   document.getElementById('modalDesc').textContent = item.desc;
-  document.getElementById('modalPath').textContent = item.gif;
 
   const frame = document.getElementById('modalGifFrame');
   frame.innerHTML = `<img src="${item.gif}" alt="${item.label}" onerror="this.style.display='none';document.getElementById('modalPlaceholder').style.display='flex'">`;
