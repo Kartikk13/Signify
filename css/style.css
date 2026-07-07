@@ -632,7 +632,7 @@ input, textarea, select { font-family: var(--fb); }
 .mission-text-block p { font-size: .97rem; color: rgba(55,67,117,.75); line-height: 1.75; margin-bottom: 14px; }
 .section-navy .mission-text-block p { color: rgba(255,252,245,.7); }
 .mission-visual {
-  aspect-ratio: 4/3;
+  aspect-ratio: 4/4;
   background: linear-gradient(135deg, var(--periwinkle), var(--peach));
   border-radius: 28px 8px 28px 8px;
   rotate: -4deg;
@@ -642,14 +642,19 @@ input, textarea, select { font-family: var(--fb); }
   overflow: hidden;
 }
 .mission-visual-flip {
-  aspect-ratio: 4/3;
+  aspect-ratio: 4/4;
   background: linear-gradient(135deg, var(--periwinkle), var(--peach));
   border-radius: 28px 8px 28px 8px;
   rotate: 5deg;
   display: flex; align-items: center; justify-content: center;
-  font-size: 5rem;
   position: relative;
   overflow: hidden;
+}
+video {
+  width: 100%;
+  max-width: 1500px;
+  max-height: 200%;
+  border-radius: 6px;
 }
 .mission-visual::before {
   content: '';
