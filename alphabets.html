@@ -1,79 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alphabets - Signify</title>
-    <link rel="stylesheet" href="css/alphabets.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alphabets — Signify</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <!-- HEADER -->
-    <header class="header">
-        <div class="logo-section">
-            <span class="logo-icon">🤟</span>
-        </div>
-        <div class="brand">
-            <h1>Signify</h1>
-            <p>Express Meaning Through Signs</p>
-        </div>
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="learn.html" class="nav-link active">Learn</a></li>
-                <li><a href="about.html" class="nav-link">About Us</a></li>
-            </ul>
-        </nav>
-    </header>
+<body data-page="alphabets">
 
-    <!-- BACK BUTTON -->
-    <a href="learn.html" class="back-button">← Back to Learn</a>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="nav-logo-badge">🤟</span> Signify</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about-site.html">About</a></li>
+      <li><a href="learn.html">Learn</a></li>
+      <li><a href="about-us.html">Team</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-cta" onclick="location.href='learn.html'">Start Learning</button>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+  
+</nav>
+</nav>
+<div class="nav-drawer" id="drawer">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about-site.html">About</a></li>
+    <li><a href="learn.html">Learn</a></li>
+    <li><a href="about-us.html">Team</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
 
-    <!-- CONTENT SECTION -->
-    <section class="content-section">
-        <h2 class="section-title">Sign Language Alphabet</h2>
-        <div class="content-grid" id="alphabet-grid"></div>
-    </section>
 
-    <!-- MODAL -->
-    <div id="signModal" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
-            <h2 class="modal-title" id="modal-title"></h2>
-            <div class="modal-gif" id="modal-gif"></div>
-            <!-- <p class="modal-description">This is a demonstration placeholder. In production, this would show an animated GIF of the sign.</p> -->
-        </div>
+<section class="hero-page">
+  <div class="hero-page-inner">
+    <div class="hero-tag"><span class="hero-tag-dot"></span> Alphabets</div>
+    <h1>ASL <em>Fingerspelling</em> Alphabet</h1>
+    <p>All 26 letters from A to Z. Tap any letter to see the animated sign demonstration.</p>
+  </div>
+</section>
+
+<section class="section section-cloud">
+  <div class="tiles-header">
+    <a href="learn.html" class="back-link">Back to Learn</a>
+    <h2>A – Z</h2>
+    <span class="tile-count">26 signs</span>
+    <div class="search-bar">
+      <input type="text" id="tileSearch" placeholder="Search a letter…" aria-label="Search letters">
+    </div>
+  </div>
+  <div class="tiles-grid" id="tilesGrid"></div>
+</section>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="signModal" role="dialog" aria-modal="true" aria-label="Sign demonstration">
+  <div class="modal-box">
+
+    <!-- Close button -->
+    <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+
+    <!-- Left arrow — OUTSIDE modal content, sits on the left edge -->
+    <button class="modal-prev" id="modalPrev" aria-label="Previous sign">&#8592;</button>
+
+    <!-- Right arrow -->
+    <button class="modal-next" id="modalNext" aria-label="Next sign">&#8594;</button>
+
+    <!-- Counter: "3 / 26" -->
+    <div class="modal-counter">
+      <span class="modal-counter-text">Sign</span>
+      <span class="modal-counter-num" id="modalCounter">1 / 26</span>
     </div>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="learn.html">Learn</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Our Mission</h3>
-                <p style="color: rgba(255,255,255,0.7);">Empowering inclusive communication through accessible sign language education for everyone, everywhere.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Connect With Us</h3>
-                <div class="footer-social">
-                    <a href="#" title="Instagram">📷</a>
-                    <a href="#" title="Twitter">𝕏</a>
-                    <a href="#" title="LinkedIn">in</a>
-                    <a href="#" title="GitHub">⚡</a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Signify. All rights reserved. | Built with ❤️ for an inclusive world</p>
-        </div>
-    </footer>
+    <!-- Title -->
+    <h2 class="modal-title" id="modalTitle"></h2>
 
-    <script src="js/alphabets.js"></script>
+    <!-- GIF spotlight ring -->
+    <div class="modal-gif-wrap">
+      <div class="modal-gif-frame" id="modalGifFrame"></div>
+      <div class="modal-gif-frame" id="modalPlaceholder" style="display:none">
+        <span class="modal-gif-placeholder"></span>
+      </div>
+    </div>
+
+    <!-- Description -->
+    <p class="modal-desc" id="modalDesc"></p>
+
+    <!-- GIF file path hint -->
+    <div class="modal-gif-path" id="modalPath"></div>
+
+    <!-- Keyboard hint (hidden on mobile via arrow-row) -->
+    <p class="modal-key-hint">
+      <kbd>←</kbd> previous &nbsp;·&nbsp; <kbd>→</kbd> next &nbsp;·&nbsp; <kbd>Esc</kbd> close
+    </p>
+
+    <!-- Mobile only: arrows inline -->
+    <div class="modal-arrow-row" style="display:none" id="mobileArrowRow">
+      <button class="modal-prev" id="modalPrevMobile" aria-label="Previous sign">&#8592;</button>
+      <div class="modal-counter">
+        <span class="modal-counter-num" id="modalCounterMobile">1 / 26</span>
+      </div>
+      <button class="modal-next" id="modalNextMobile" aria-label="Next sign">&#8594;</button>
+    </div>
+
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo"><span class="nav-logo-badge">🤟</span> Signify</a>
+      <p>Free sign language education for everyone, everywhere.</p>
+      <div class="footer-social"><a href="#">📷</a><a href="#">𝕏</a><a href="#">in</a><a href="https://github.com/Kartikk13">gh</a></div>
+    </div>
+    <div class="footer-col"><h4>Learn</h4><ul>
+      <li><a href="alphabets.html">Alphabets</a></li>
+      <li><a href="numbers.html">Numbers</a></li>
+      <li><a href="words.html">Common Words</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Pages</h4><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about-site.html">About</a></li>
+      <li><a href="about-us.html">Team</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Connect</h4><ul>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Signify.</span><span>Free forever</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/signs.js"></script>
 </body>
 </html>

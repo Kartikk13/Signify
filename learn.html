@@ -1,91 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn - Signify</title>
-    <link rel="stylesheet" href="css/learn.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn — Signify</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- HEADER -->
-    <header class="header">
-        <div class="logo-section">
-            <span class="logo-icon">🤟</span>
-        </div>
-        <div class="brand">
-            <h1>Signify</h1>
-            <p>Express Meaning Through Signs</p>
-        </div>
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="learn.html" class="nav-link active">Learn</a></li>
-                <li><a href="about.html" class="nav-link">About Us</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- HERO SECTION -->
-    <section class="learn-hero">
-        <div class="floating-shape shape1"></div>
-        <div class="floating-shape shape2"></div>
-        <div class="hero-content">
-            <h1>What do you want to learn today?</h1>
-            <p>Choose a category to begin your sign language journey</p>
-        </div>
-    </section>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="nav-logo-badge">🤟</span> Signify</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about-site.html">About</a></li>
+      <li><a href="learn.html">Learn</a></li>
+      <li><a href="about-us.html">Team</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-cta" onclick="location.href='learn.html'">Start Learning</button>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+  
+</nav>
+</nav>
+<div class="nav-drawer" id="drawer">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about-site.html">About</a></li>
+    <li><a href="learn.html">Learn</a></li>
+    <li><a href="about-us.html">Team</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
 
-    <!-- LEARNING TILES -->
-    <section class="section">
-        <div class="learning-tiles">
-            <a href="alphabets.html" class="learning-card">
-                <span class="learning-card-icon">🔤</span>
-                <h3>Alphabets</h3>
-                <p>Learn the A-Z fingerspelling alphabet, the foundation of sign language communication</p>
-            </a>
-            <a href="numbers.html" class="learning-card">
-                <span class="learning-card-icon">🔢</span>
-                <h3>Numbers</h3>
-                <p>Master counting and number signs from 0-10 and beyond</p>
-            </a>
-            <a href="words.html" class="learning-card">
-                <span class="learning-card-icon">💬</span>
-                <h3>Common Words</h3>
-                <p>Discover essential vocabulary for everyday conversations</p>
-            </a>
-        </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="learn.html">Learn</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Our Mission</h3>
-                <p style="color: rgba(255,255,255,0.7);">Empowering inclusive communication through accessible sign language education for everyone, everywhere.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Connect With Us</h3>
-                <div class="footer-social">
-                    <a href="#" title="Instagram">📷</a>
-                    <a href="#" title="Twitter">𝕏</a>
-                    <a href="#" title="LinkedIn">in</a>
-                    <a href="#" title="GitHub">⚡</a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Signify. All rights reserved. | Built with ❤️ for an inclusive world</p>
-        </div>
-    </footer>
+<section class="hero-page">
+  <div class="hero-page-inner">
+    <div class="hero-tag"><span class="hero-tag-dot"></span> Learning Hub</div>
+    <h1>What do you want to <em>learn</em> today?</h1>
+    <p>Choose a category below and start exploring signs at your own pace — no pressure, no timer, just learning.</p>
+  </div>
+</section>
 
-    <script src="js/learn.js"></script>
+<section class="section section-cloud">
+  <div class="learn-grid">
+    <a href="alphabets.html" class="learn-card reveal">
+      <div class="learn-card-header">
+        <span class="learn-card-emoji">🔤</span>
+      </div>
+      <div class="learn-card-body">
+        <span class="learn-card-count">26 Signs</span>
+        <h3>Alphabets</h3>
+        <p>Master the complete A–Z fingerspelling alphabet — the essential foundation of all sign language communication.</p>
+        <span class="learn-card-cta">Explore Alphabets</span>
+      </div>
+    </a>
+    <a href="numbers.html" class="learn-card reveal reveal-delay-2">
+      <div class="learn-card-header">
+        <span class="learn-card-emoji">🔢</span>
+      </div>
+      <div class="learn-card-body">
+        <span class="learn-card-count">10 Signs</span>
+        <h3>Numbers</h3>
+        <p>Learn to sign 0 through 9 — used for time, age, money, addresses, and everyday counting.</p>
+        <span class="learn-card-cta">Explore Numbers</span>
+      </div>
+    </a>
+    <a href="words.html" class="learn-card reveal reveal-delay-4">
+      <div class="learn-card-header">
+        <span class="learn-card-emoji">💬</span>
+      </div>
+      <div class="learn-card-body">
+        <span class="learn-card-count">20+ Signs</span>
+        <h3>Common Words</h3>
+        <p>Start real conversations with essential signs — Hello, Thank You, Sorry, Help, Love, and more.</p>
+        <span class="learn-card-cta">Explore Words</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="section section-peri">
+  <div class="section-header">
+    <span class="section-eyebrow">Learning Tips</span>
+    <h2>Get the most from Signify</h2>
+  </div>
+  <div class="feature-grid">
+    <div class="feature-card reveal">
+      <h3>Watch First</h3>
+      <p>Open the GIF and watch the full movement loop at least 3 times before trying to replicate it yourself.</p>
+    </div>
+    <div class="feature-card reveal reveal-delay-2">
+      <h3>Mirror Practice</h3>
+      <p>Practice in front of a mirror so you can see your own hand shape and compare it to the demonstration.</p>
+    </div>
+    <div class="feature-card reveal reveal-delay-4">
+      <h3>Repeat Daily</h3>
+      <p>Even 5 minutes a day of practice will embed signs into muscle memory faster than long occasional sessions.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="cta-banner-inner">
+    <h2>Questions? Ideas? Feedback?</h2>
+    <p>We'd love to hear from you and keep improving Signify.</p>
+    <div class="btn-row">
+      <a href="contact.html" class="btn btn-primary btn-arrow">Contact Us</a>
+      <a href="about-us.html" class="btn btn-ghost">Meet the Team</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo"><span class="nav-logo-badge">🤟</span> Signify</a>
+      <p>Breaking communication barriers through free, accessible sign language education for everyone.</p>
+      <div class="footer-social"><a href="#">📷</a><a href="#">𝕏</a><a href="#">in</a><a href="https://github.com/Kartikk13">gh</a></div>
+    </div>
+    <div class="footer-col"><h4>Learn</h4><ul>
+      <li><a href="alphabets.html">Alphabets</a></li>
+      <li><a href="numbers.html">Numbers</a></li>
+      <li><a href="words.html">Common Words</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Pages</h4><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about-site.html">About</a></li>
+      <li><a href="about-us.html">Team</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Connect</h4><ul>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="https://github.com/Kartikk13">GitHub</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Signify. Built with ❤️ for an inclusive world.</span>
+    <span>Free forever</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>
